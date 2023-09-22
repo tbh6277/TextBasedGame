@@ -3,6 +3,9 @@ namespace IGME206_TextBasedGame
 {
     internal class DialogueHandler
     {
+
+        internal string[] testChoices = {"Choice 1", "Choice 2", "Choice 3"};
+
         /* Handle when the user must choose from a list of options
 		 * Provides user with a list of options and processes the result
 		 * 

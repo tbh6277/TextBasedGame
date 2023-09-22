@@ -1,0 +1,14 @@
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\bin\Debug\net6.0\IGME206_TextBasedGame.exe
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\bin\Debug\net6.0\IGME206_TextBasedGame.deps.json
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\bin\Debug\net6.0\IGME206_TextBasedGame.runtimeconfig.json
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\bin\Debug\net6.0\IGME206_TextBasedGame.dll
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\bin\Debug\net6.0\IGME206_TextBasedGame.pdb
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.AssemblyInfoInputs.cache
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.AssemblyInfo.cs
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.csproj.CoreCompileInputs.cache
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.dll
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\refint\IGME206_TextBasedGame.dll
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.pdb
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\IGME206_TextBasedGame.genruntimeconfig.cache
+C:\Users\tylin\Documents\GameDev\IGME206_TextBasedGame\IGME206_TextBasedGame\obj\Debug\net6.0\ref\IGME206_TextBasedGame.dll
