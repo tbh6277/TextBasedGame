@@ -1,0 +1,29 @@
+High level view:
+
+- You are a professor who has found a treasure map
+- You journey into the jungle to find the treasure
+- Obstacles:
+	- Monkeys (Can fight -> stick + random prob, hide -> find bananas to distract, run -> can't outrun)
+	- Puzzle at gate
+	- Maze?? 
+	- Grab item
+	- if time --> escape sequence
+
+
+Class breakdown:
+
+- Dialogue handler
+	- Arrays of options
+	- Function abstracting input handling
+	- General text premade
+- Program --> general gameplay handler
+	- Intro 
+	- Enter jungle
+	- Obstacles 
+	- Escape
+	- Handle failure
+- Obstacles (either interface or parent class, handle fail state)
+	- Child class Monkeys
+	- Child class GatePuzzle
+	- Child class Maze??
+	- Child class Escape
