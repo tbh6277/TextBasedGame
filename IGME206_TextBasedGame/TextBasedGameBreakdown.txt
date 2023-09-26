@@ -1,13 +1,10 @@
 High level view:
 
-- You are a professor who has found a treasure map
-- You journey into the jungle to find the treasure
-- Obstacles:
-	- Monkeys (Can fight -> stick + random prob, hide -> find bananas to distract, run -> can't outrun)
-	- Puzzle at gate
-	- Maze?? 
-	- Grab item
-	- if time --> escape sequence
+- Ghost hunter entering haunted castle
+- can explore castle 
+	-(MAP? display more information upon discovery?)
+- Upon defeating a ghost, collect the soul to be released at the end
+- Find treasure / clues about ghost motivations to defeat them?? (May be too complex)
 
 
 Class breakdown:
@@ -16,14 +13,53 @@ Class breakdown:
 	- Arrays of options
 	- Function abstracting input handling
 	- General text premade
+
 - Program --> general gameplay handler
 	- Intro 
 	- Enter jungle
 	- Obstacles 
 	- Escape
 	- Handle failure
+
 - Obstacles (either interface or parent class, handle fail state)
-	- Child class Monkeys
-	- Child class GatePuzzle
-	- Child class Maze??
-	- Child class Escape
+	- Child class ghosts 
+	- Child class locks / puzzles?
+
+- GhostHunter 
+	- array of objects found
+	- 
+
+- Treasure
+	- Child class key
+	- Child class loot
+	- Child class memento
+
+- Rooms
+	- Child class hallway
+	- Child class bedroom
+	- Child class specializedRoom
+
+
+
+
+GRADING CRITERIA:
+
+5 classes minmum(>= 3 member variables)
+	>= 2 inherited in some way
+Some type of polymorphic behavior
+Recursion of some kind
+Some type of loop
+Do not use default constructor (MAKE CONSTRUCTORS)
+>= 1 example of method overloading 
+For derived classes
+	>= 1 new var not part of parent classs
+	show meaningful purpose for being derived
+	>= 1 overriden method
+Rooms created and stored via a linked list (graph)
+	may contain enemy to fight or loot to collect
+Take user input in accounts to make choices 
+	can choose directions to progress to
+	can choose action to fight entity in room
+When battle won -> should win item stored in array or list
+give user option to use an item from stack to win battle or unlock door
+when @ exit or @ any point upon request, list remaining items in stack
