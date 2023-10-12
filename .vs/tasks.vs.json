@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Resource",
+      "appliesTo": "IGME206_TextBasedGame/Resource/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-Resources",
+      "appliesTo": "IGME206_TextBasedGame/Resources/",
+      "type": "launch"
+    }
+  ]
+}

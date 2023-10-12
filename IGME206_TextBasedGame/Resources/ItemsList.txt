@@ -1,0 +1,20 @@
+Music Room;harp:A once beautiful instrument, now rotted from age
+Kitchen;knife
+Outer Court;helmet
+Great Hall;crown:Golden, inlaid with rubies
+Great Hall;golbet:Ornate silver.
+Bakehouse;cracked bowl
+Dining Room;chipped teacup:Faded blue flowers decorate the base of it.
+Great Chambers;crown
+South-West Tower;letter:Love letter exchanged between Jane and the King of Scotts
+Tea Room;locket:Engraved with a C
+Chapel;wooden cross
+Inner Gate;broken camera
+Dungeon;flashlight
+Stables;coil of rope
+Storeroom;empty crate
+North-East Tower;sword
+South-East Tower;eyeglass
+Gatehouse;large iron key
+Storeroom;small iron key
+Gatehouse;large iron key

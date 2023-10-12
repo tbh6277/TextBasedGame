@@ -1,0 +1,13 @@
+Courtyard;Frederick; was a nobleman who was gravely injured in a hunting accident. He died later in the castle.;accident
+Outer Gatehouse;Alden; was a guard who died of old age. He continued to hold his post upon his passing.;old age
+Kitchen;Digby; a servant who was poisoned when he was sneaking some of the Lord Byron's stew.;accident
+Tea Room;Edgar; a servant who died after slipping on spilled tea and hitting his head.;accident
+Dungeon;Fairfax; died of illness in the dungeon after he was arrested for poisening his cousin, Lord Byron.;illness
+Cabinet;Lord Byron; was poisoned by his cousin, Fairfax.;murder;Fairfax
+North-East Tower;Jane; was pushed from the North-East Tower by Lord Byron to prevent her from marrying the Scottish King.;murder;Lord Byron
+Great Chambers;Lady Catherine; died in childbirth due to inadequate medical intervention.;accident
+Servants Quarters;Daisy; was a servant who died of illness.;illness
+Chapel;William; was a priest who died from old age.;old age
+Music Room;Annabelle;was a musician who was killed by her jealous lover, Frederick.; murder;Frederick;knife
+Inner Gate;Sarah; was one of the missing castle explorers.;Unknown
+Gatehouse;Brendon; was one of the missing castle explorers.;Unknown

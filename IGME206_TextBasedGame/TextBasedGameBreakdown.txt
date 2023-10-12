@@ -4,7 +4,7 @@ High level view:
 - can explore castle 
 	-(MAP? display more information upon discovery?)
 - Upon defeating a ghost, collect the soul to be released at the end
-- Find treasure / clues about ghost motivations to defeat them?? (May be too complex)
+- Find items / clues about ghost motivations to defeat them?? (May be too complex)
 
 
 Class breakdown:
@@ -14,30 +14,34 @@ Class breakdown:
 	- Function abstracting input handling
 	- General text premade
 
-- Program --> general gameplay handler
-	- Intro 
-	- Enter jungle
-	- Obstacles 
-	- Escape
-	- Handle failure
+- Program 
+	- Setup
+	- RunGame
 
-- Obstacles (either interface or parent class, handle fail state)
+- Obstacles (Abstract Class, handle fail state)
 	- Child class ghosts 
-	- Child class locks / puzzles?
+		- Randomly generate / attatch to rooms?
+	- Child class traps
+		- stairs, other dangerous locations
 
 - GhostHunter 
-	- array of objects found
-	- 
+	- array of items found
+	- Health
+	- number of souls collected
 
-- Treasure
+- Item
 	- Child class key
+		- Specific ones for certain rooms, cannot be inside of room it unlocks
 	- Child class loot
-	- Child class memento
+		- Coins, cool glass, etc
+		- Helpful things like rope
+	- Child class memento (can be used to defeat ghost if belongs to ghost)
+		- Diary 
+		- Locket
+		- Weapon (if how ghost died, enrage)
 
-- Rooms
-	- Child class hallway
-	- Child class bedroom
-	- Child class specializedRoom
+- Room
+	- If locked, has cooresponding key
 
 
 
@@ -62,4 +66,4 @@ Take user input in accounts to make choices
 	can choose action to fight entity in room
 When battle won -> should win item stored in array or list
 give user option to use an item from stack to win battle or unlock door
-when @ exit or @ any point upon request, list remaining items in stack
+upon exit or @ any point upon request, list remaining items in stack

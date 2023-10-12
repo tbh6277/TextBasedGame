@@ -1,0 +1,19 @@
+Outer Gate;Outer Court
+Outer Court;Stables;Chapel;Outer Gatehouse;Inner Gate
+Inner Gate;Courtyard
+Courtyard;Gatehouse;Entry hallway
+Gatehouse;South-East Tower
+Entry hallway;Great Hall;Music Room;Servant hallway;Bakehouse
+Great Hall;Cabinet
+Servant hallway;Bakehouse;Staircase to Dungeon;Kitchen;Servants Quarters
+Staircase to Dungeon;Dungeon
+Dungeon;Staircase to Sevant hallway
+Staircase to Servant hallway;Servant hallway
+Servants Quarters;Storeroom
+Storeroom;South-West Tower
+Bakehouse;North-West Tower
+Music Room;Tea Room
+Tea Room;Dining Room
+Dining Room;North-East Tower;Cabinet
+Cabinet;Sitting Room
+Sitting Room;Great Chambers

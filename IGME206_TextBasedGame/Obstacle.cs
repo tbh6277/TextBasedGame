@@ -1,19 +1,34 @@
 ﻿
 namespace IGME206_TextBasedGame
 {
-    internal abstract class Obstacle
+    internal class Obstacle
     {
-        protected string successMessage = "You have won!";
-        protected string defeatMessage = "You have lost.";
-        internal abstract void Encounter();
+        protected string successMessage;
+        protected string defeatMessage;
+        protected bool obstacleDefeated = false;
+        protected string obstacleType;
+
+        internal Obstacle (string successMessage, string defeatMessage, string obstacleType)
+        {
+            this.defeatMessage = defeatMessage;
+            this.successMessage = successMessage;
+            this.obstacleType = obstacleType;
+        }
+
+        internal string ObstacleType { get { return obstacleType; } }
+
+        internal virtual void Encounter(GhostHunter gh) { }
+
+        internal bool ObstacleDefeated { get { return this.obstacleDefeated; } }
 
         protected void Success()
         {
-            Console.WriteLine(successMessage);
+            Console.WriteLine(this.successMessage);
+            obstacleDefeated=true;
         }
 
 
-        public void Failure()
+        protected virtual void Failure()
         {
             Console.WriteLine("\n" + this.defeatMessage);
             Console.WriteLine("Would you like to try again? y/n");
