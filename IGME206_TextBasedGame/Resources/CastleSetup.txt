@@ -7,6 +7,8 @@ Entry hallway;Great Hall;Music Room;Servant hallway;Bakehouse
 Great Hall;Cabinet
 Servant hallway;Bakehouse;Staircase to Dungeon;Kitchen;Servants Quarters
 Staircase to Dungeon;Dungeon
+Dungeon;Staircase to Sevant hallway
+Staircase to Servant hallway;Servant hallway
 Servants Quarters;Storeroom
 Storeroom;South-West Tower
 Bakehouse;North-West Tower

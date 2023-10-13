@@ -6,7 +6,6 @@
             "Try and break the door in", "View Inventory", "Come back later" };
         private string roomName;
         private Item key;
-        private const int MAX_DOOR_BREAK_DAMAGE = 5;
 
         private new const string successMessage = "\nSuccess! You have unlocked the door!";
         private new const string defeatMessage = "\nThe door remains locked. You are unable to enter the room.";
@@ -33,7 +32,7 @@
             if (choice == 0)
             {
                 Item? k = gh.ChooseKey();
-                if (k != null && k == this.key)
+                if (k == null && k == this.key)
                 {
                     this.obstacleDefeated = true;
                     this.Success();
@@ -45,28 +44,14 @@
             }
             else if (choice == 1)
             {
-                bool perish = gh.TakeDamage(rnd.Next(MAX_DOOR_BREAK_DAMAGE));
+                // If time, let user pick something from inventory to try and break door open with
                 // This option exists because I think its funny
-                if (rnd.Next(1000) == 1)
+                Console.WriteLine("\nYou slam your shoulder into the door, but it doesn't budge " +
+                    "and you take damage.");
+                if ( gh.TakeDamage(1) )
                 {
-                    Console.WriteLine("\nWith incredible luck, the old door gives way as you slam into it.");
-                    this.Success();
-
-                    if (perish) { base.Failure(); }
+                    base.Failure();
                 }
-                else
-                {
-                    Console.WriteLine("\nYou slam into the door, but it doesn't budge.");
-                    if ( perish )
-                    {
-                        base.Failure();
-                    }
-                    else
-                    {
-                        this.Failure();
-                    }
-                }
-
             }
             else if (choice == 2)
             {

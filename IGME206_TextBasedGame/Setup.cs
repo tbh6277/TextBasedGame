@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
 
 namespace IGME206_TextBasedGame
 {
@@ -14,9 +13,9 @@ namespace IGME206_TextBasedGame
         private const string LOCKED_DOORS_PATH = "./Resources/LockedDoors.txt";
         private const string TRAPS_LIST_PATH = "./Resources/TrapList.txt";
 
-        private ConcurrentDictionary<string, Room> rooms = new ConcurrentDictionary<string, Room>();
-        private ConcurrentDictionary<string, Item> items = new ConcurrentDictionary<string, Item>();
-        private ConcurrentDictionary<string, Ghost> ghosts = new ConcurrentDictionary<string, Ghost>();
+        private Dictionary<string, Room> rooms = new Dictionary<string, Room>();
+        private Dictionary<string, Item> items = new Dictionary<string, Item>();
+        private Dictionary<string, Ghost> ghosts = new Dictionary<string, Ghost>();
 
         internal string SetupMap()
         {
@@ -56,7 +55,8 @@ namespace IGME206_TextBasedGame
                         Room room = rooms[rName];                     
                         Item i = new Item(iName, description);
                         room.AddItem(i);
-                        items.TryAdd(iName, i);
+                        items.Add(iName, i);
+                        
                     }
                 });
             }
@@ -138,7 +138,7 @@ namespace IGME206_TextBasedGame
                     }
 
                     Ghost g = new Ghost(gName, gCOD);
-                    ghosts.TryAdd(gName, g);
+                    ghosts.Add(gName, g);
 
                     if (rooms.ContainsKey(rName))
                     {
@@ -148,7 +148,7 @@ namespace IGME206_TextBasedGame
                 }
 
                 // assign items to ghosts
-                Parallel.ForEach (File.ReadLines(GHOST_ITEMS_PATH), line => 
+                Parallel.ForEach (File.ReadLines(GHOST_LIST_PATH), line => 
                 {
                     string[] itemLine = line.Split(';');
                     string gName = itemLine[0];
@@ -159,6 +159,7 @@ namespace IGME206_TextBasedGame
                         Ghost g = ghosts[gName];
                         Item i = items[iName];
 
+                        Console.WriteLine(gName +" - " + iName);
                         i.Owner = g;
                         g.AddItem(i);
                     }
@@ -185,7 +186,7 @@ namespace IGME206_TextBasedGame
                     
                     if (!rooms.ContainsKey(rName))
                     {
-                        rooms.TryAdd(rName, new Room(rName));
+                        rooms.Add(rName, new Room(rName));
                     }
                     
                     Room curr = rooms[rName];
@@ -194,7 +195,7 @@ namespace IGME206_TextBasedGame
                     {
                         if(!rooms.ContainsKey(name))
                         {
-                            rooms.TryAdd(name, new Room(name));
+                            rooms.Add(name, new Room(name));
                         } 
                         curr.AddConnection(rooms[name]);
                         rooms[name].AddConnection(curr);

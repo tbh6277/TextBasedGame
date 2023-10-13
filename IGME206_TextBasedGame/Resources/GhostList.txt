@@ -7,7 +7,7 @@ Cabinet;Lord Byron; was poisoned by his cousin, Fairfax.;murder;Fairfax
 North-East Tower;Jane; was pushed from the North-East Tower by Lord Byron to prevent her from marrying the Scottish King.;murder;Lord Byron
 Great Chambers;Lady Catherine; died in childbirth due to inadequate medical intervention.;accident
 Servants Quarters;Daisy; was a servant who died of illness.;illness
-Chapel;Williams; was a priest who died from old age.;old age
-Music Room;Annabelle; was a musician who was stabbed by her jealous lover, Frederick.;murder;Frederick;knife
+Chapel;William; was a priest who died from old age.;old age
+Music Room;Annabelle;was a musician who was killed by her jealous lover, Frederick.; murder;Frederick;knife
 Inner Gate;Sarah; was one of the missing castle explorers.;Unknown
 Gatehouse;Brendon; was one of the missing castle explorers.;Unknown

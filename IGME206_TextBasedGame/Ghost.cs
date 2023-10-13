@@ -6,13 +6,12 @@ namespace IGME206_TextBasedGame
     {
         private static string[] ghostChoices = { "Attack ghost",
             "Ask ghost who they are and how they died", "View Inventory", "Come back later" };
-        private static string[] ghostAttacks = { " haunts you.", " tries to possess you.", " drains your lifeforce" };
         private string name = "";
         private CauseOfDeath? causeOfDeath;
-        private List<Item> items = new List<Item>();
-        private List<bool> itemUsed = new List<bool>();
+        private List<Item>? items;
         private int health;
         private int angerLevel = 0;
+        private Random rnd = new Random();
         private int maxDamage;
 
         private new const string successMessage = "\nYou have defeated the ghost";
@@ -37,36 +36,13 @@ namespace IGME206_TextBasedGame
         internal void AddItem(Item item)
         {
             this.items.Add(item);
-            this.itemUsed.Add(false);
         }
 
         internal bool ItemImportance(Item item) {
-
-            int index = -1;
             if(this.items != null && this.items.Contains(item))
             {
-                index = this.items.IndexOf(item);
-            }
-
-            if(index != -1 && !this.itemUsed[index])
-            {
-                Console.WriteLine("\nThis " + item.ItemName + " has meaning to this ghost. Their health is cut in half.");
-                this.itemUsed[index] = true;
-                return this.TakeDamage(health / 2);
-            } 
-            else if (index != -1)
-            {
-                Console.WriteLine("\nThis item has already been used to weaken the ghost of " + name + ". It cannot be used again.");
-            }
-            else if (causeOfDeath.Weapon != null && item == causeOfDeath.Weapon && causeOfDeath.Cause == "murder")
-            {
-                Console.WriteLine("\nYou brandish the murder weapon that killed this ghost. This engrages " +
-                    "them and now they can do up to 10 points more damage.");
-                maxDamage += 10;
-            }
-            else
-            {
-                Console.WriteLine("\nThis item means nothing to the ghost of " + name);
+                Console.WriteLine("\nThis " + item.ItemName + " has meaning to this ghost.");
+                return this.TakeDamage(rnd.Next(5, maxDamage));
             }
             return false;
         }
@@ -82,14 +58,14 @@ namespace IGME206_TextBasedGame
             else
             {
                 Console.WriteLine("\nThe ghost of " + name + " has taken " + damage + " damage.");
-                Console.WriteLine("Their health is now at " + health + ".");
+                Console.WriteLine("\nTheir health is now at " + health + ".");
                 return false;
             }
         }
 
         private bool Attack(GhostHunter gh)
         {
-            Console.WriteLine("\nThe ghost of " +  this.name + ghostAttacks[rnd.Next(0,3)]);
+            Console.WriteLine("\nThe ghost of " +  this.name + " tries to suck the life out of you.");
             int damage = rnd.Next(maxDamage);
             return gh.TakeDamage(damage);
         }
@@ -98,7 +74,7 @@ namespace IGME206_TextBasedGame
         {
             bool ghFlee = false;
 
-            while (this.health >= 0 && !ghFlee)
+            while (this.health > 0 && !ghFlee)
             {
                 if (ghTurn)
                 {
@@ -141,11 +117,11 @@ namespace IGME206_TextBasedGame
             }
             else if (choice == 1)
             {
-                Console.WriteLine("\nYou call out to the ghost, 'Who are you, lost spirt? " +
-                    "How did you come to be haunting these halls?'");
+                Console.WriteLine("You call out to the ghost, 'Who are you, lost spirt? " +
+                    "How did you haunting these halls?'");
                 if ( angerLevel > 3)
                 {
-                    Console.WriteLine("\nThis ghost is angry. Your question provokes them and they attack.");
+                    Console.WriteLine("The ghost is an angry one. Your question provokes them and they attack.");
                     Fight(gh, false);
                 }
                 else

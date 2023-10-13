@@ -32,7 +32,7 @@ namespace IGME206_TextBasedGame
             {
                 if (input == null) { input = " "; }
 
-                Console.WriteLine($"\nSorry, '{input}' is not a valid choice. Please try another.");
+                Console.WriteLine($"Sorry, '{input}' is not a valid choice. Please try another.");
                 Console.Write("> ");
                 input = Console.ReadLine();
             }

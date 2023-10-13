@@ -27,10 +27,9 @@ namespace IGME206_TextBasedGame
             set { this.personResponsible = value; }
         }
 
-        internal Item? Weapon
+        internal Item Weapon
         {
             set { this.weapon = value; }
-            get { return this.weapon; }
         }
 
         internal int CauseIndex { get { return this.causeIndex; } }

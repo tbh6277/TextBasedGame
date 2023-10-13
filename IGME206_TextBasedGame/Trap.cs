@@ -8,7 +8,6 @@
         private string trapName;
         private Item key;
         private bool fallen = false;
-        private const int MAX_FALL_DAMAGE = 10;
 
         private new const string successMessage = "";
         private new const string defeatMessage = "\nYou have perished.";
@@ -25,10 +24,10 @@
 
         internal override void Encounter(GhostHunter gh)
         {
-            if (!fallen)
+            if (! fallen)
             {
                 Console.WriteLine("Oh no! The stairs have caved in and you have fallen. You are now trapped.");
-                gh.TakeDamage(rnd.Next(MAX_FALL_DAMAGE));
+                gh.TakeDamage(5);
                 fallen = true;
             }
             

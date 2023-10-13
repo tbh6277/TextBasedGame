@@ -7,7 +7,6 @@ namespace IGME206_TextBasedGame
         protected string defeatMessage;
         protected bool obstacleDefeated = false;
         protected string obstacleType;
-        protected Random rnd = new Random();
 
         internal Obstacle (string successMessage, string defeatMessage, string obstacleType)
         {
@@ -32,7 +31,26 @@ namespace IGME206_TextBasedGame
         protected virtual void Failure()
         {
             Console.WriteLine("\n" + this.defeatMessage);
-            Program.EndGame();
+            Console.WriteLine("Would you like to try again? y/n");
+            
+            string? input = Console.ReadLine();
+            char choice; 
+            while (!char.TryParse(input, out choice) && choice != 'y' && choice != 'n')
+            {
+
+                Console.WriteLine($"Sorry, '{choice}' is not a valid choice. Please try another.");
+                input = Console.ReadLine();
+            }
+
+            if (choice == 'y')
+            {
+                Program.RunGame();
+            }
+            else
+            {
+                Console.WriteLine("Thanks for playing!");
+                Environment.Exit(0);
+            }
 
         }
     }
