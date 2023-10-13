@@ -27,7 +27,6 @@ namespace IGME206_TextBasedGame
             this.angerLevel = causeOfDeath.CauseIndex;
             this.maxDamage = (angerLevel + 1) * 3 + 1;
             this.health = (angerLevel + 1) * 5;
-            this.health = 1;
         }
 
         internal string Name
