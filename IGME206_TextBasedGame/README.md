@@ -7,7 +7,7 @@ for working directory. The necessary change in the Setup.cs file should be:
 - ITEMS_LIST_PATH = "../../../Resources/ItemsList.txt"
 - GHOST_LIST_PATH = "../../../Resources/GostList.txt"
 - GHOST_ITEMS_PATH = "../../../Resources/GostItems.txt"
-= LOCKED_DOORS_PATH = "../../../Resources/LockedDoors.txt"
+- LOCKED_DOORS_PATH = "../../../Resources/LockedDoors.txt"
 - TRAPS_LIST_PATH = "../../../Resources/TrapList.txt"
 
 NOTE #2: Upon submission, I forgot to remove the line in the Ghost constructor that set the health to 1 for testing purposes. It is fixed here in the github but not in the actual submission.
