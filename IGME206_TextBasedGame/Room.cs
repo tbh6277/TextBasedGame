@@ -44,7 +44,7 @@ namespace IGME206_TextBasedGame
 
         internal Room LeaveRoom()
         {
-            string exitString = "Which room would you like to go into?:";
+            string exitString = "\nWhich room would you like to go into?:";
             int choice = DialogueHandler.UserChoice(this.ConnectionsAsStrings(), exitString);
             return connections[choice];
         }
@@ -126,7 +126,8 @@ namespace IGME206_TextBasedGame
                 while (interactions.Count > 2)
                 {
                     choice = DialogueHandler.UserChoice(interactions.ToArray());
-                    if (choice == (interactions.Count - 1)) {
+                    if (choice == (interactions.Count - 1)) 
+                    {
                         break;
                     } 
                     else if (choice == (interactions.Count - 2))
@@ -150,6 +151,7 @@ namespace IGME206_TextBasedGame
                             obstacles[interaction].Encounter(gh);
                             if (obstacles[interaction].ObstacleDefeated)
                             {
+                                obstacles.RemoveAt(interaction);
                                 interactions.RemoveAt(choice);
                                 interactionIndex.RemoveAt(choice);
                             }

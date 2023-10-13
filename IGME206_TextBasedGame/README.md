@@ -1,6 +1,7 @@
-NOTE: If you are running via the Visual Studio debugger instead of the command line, 
-the filepath constants CASTLE_MAP_PATH and CASTLE_SETUP_PATH need to be adjusted 
-for working directory. The necessary change in the Setup.cs file should be:
+NOTE: If you are running via the Visual Studio debugger instead of the command line 
+(via 'dotnet run'), the filepath constants need to be adjusted for the working directory. 
+
+The necessary change in the Setup.cs file should be:
 
 CASTLE_MAP_PATH = "../../../Resources/CastleMap.txt"
 CASTLE_SETUP_PATH = "../../../Resources/CastleSetup.txt"
@@ -13,39 +14,41 @@ TRAPS_LIST_PATH = "../../../Resources/TrapList.txt";
 
 For grading, the things to look at are:
 
+5 classes:
+1. Room -> rooms are stored in graph via Room[] connections
+2. Obstacle
+3. Ghost (enemy to fight)
+4. Lock
+5. GhostHunter
+
 Classes Inhereted from Obstacle:
 - Gost
-- Trap
 - Lock
-- These are all obstacles that result in either a success or failure
+- Trap
 
-Derived Class Override + extra member variable:
-- Ghost: name -> the ghost has a name, other obstacles do not
-- Lock: overrides Failure() because a failure to unlock does not mean defeat
+Static member variable:
+- in program, list of user choices
 
 Polymorphic behavior
 - (I am assuming this is referring to subtype polymorphism)
 - In the Ghost class, it has a list of obstacles that may be any of the child types
 
-Overloading + loop:
-- Program.RunGame()
-	- (The reason it is polymorphic is because it is also called from Obstacle.Failure() in the event that the user wishes to try again)
-
 Recursion:
 - In ghost hunter -> printing the list of items
+- (Also in Ghost.Encounter(), but that one is less straightforward)
 
-Take user input into account to make choices:
-- Easiest example is in the while loop of Program.RunGame()
-- DialogueHandler.Choices() handles the actual interaction with the user
+Loop:
+- Program.RunGame()
+- Also basically every class has one
 
-Take user input in accounts to make choices 
-	can choose directions to progress to
-	can choose action to fight entity in room
+Overloaded method:
+- Program.RunGame()
+- Program.RunGame(startRoom)
 
-Static member variable:
-- in program, list of user choices
+Derived Class Override + extra member variable:
+- Ghost: name -> the ghost has a name, other obstacles do not
+- Lock: overrides Failure() because a failure to unlock does not mean defeat
 
+The derived class attributes and members should be clear in Obstacle, Ghost, or Lock
 
-When battle won -> should win item stored in array or list
-give user option to use an item from stack to win battle or unlock door
-upon exit or @ any point upon request, list remaining items in stack
+Item is "loot" class. They can be picked up and used as needed.

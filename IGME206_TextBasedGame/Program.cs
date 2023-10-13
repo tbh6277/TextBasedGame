@@ -3,12 +3,13 @@ namespace IGME206_TextBasedGame
 {
     internal class Program
     {
-        private static string[] choices = new string[] { "Interact with Room", "Continue Exploring", "View Map", "View Inventory", "Quit Game" };
+        private static string[] choices = new string[] { "Interact with Room", "Continue Exploring", "View Map", "View Inventory", "View Stats", "Quit Game" };
         private const string choiceString = "\nWhat would you like to do next?:";
         private const string START_ROOM = "Outer Gate";
         private static string castleMap = "";
         private static Room? startRoom;
         private static int NUM_OF_GHOSTS = 13;
+        private static GhostHunter gh = new GhostHunter();
 
         private static Room SetupGame()
         {
@@ -23,21 +24,29 @@ namespace IGME206_TextBasedGame
             RunGame(startRoom);
         }
 
+        internal static void EndGame()
+        {
+            Console.WriteLine("\nYour final inventory is: ");
+            gh.ViewInventory();
+            Console.WriteLine("Thanks for playing!");
+            Environment.Exit(0);
+        }
+
         private static void RunGame(Room currRoom)
         {
-            GhostHunter gh = new GhostHunter();
 
             Console.WriteLine("\nYou stand in the " + currRoom.RoomType + ".");
-            int choice = DialogueHandler.UserChoice(choices, choiceString);
+            int choice;
 
-            while (choice != 4 && gh.SoulCount < 13)
+            do
             {
+                choice = DialogueHandler.UserChoice(choices, choiceString);
                 Console.WriteLine("\nYou stand in the " + currRoom.RoomType + ".");
-                if(choice == 0)
+                if (choice == 0)
                 {
                     currRoom.RoomInteraction(gh);
                 }
-                else if(choice == 1)
+                else if (choice == 1)
                 {
                     if (currRoom.TryExitRoom(gh))
                     {
@@ -47,8 +56,12 @@ namespace IGME206_TextBasedGame
                             currRoom = newRoom;
                             currRoom.RoomInteraction(gh);
                         }
-                    }  
-                    
+                        else
+                        {
+                            Console.WriteLine("\nYou stand in the " + currRoom.RoomType + ".");
+                        }
+                    }
+
                 }
                 else if (choice == 2)
                 {
@@ -58,8 +71,12 @@ namespace IGME206_TextBasedGame
                 {
                     gh.ViewInventory();
                 }
-                choice = DialogueHandler.UserChoice(choices, choiceString);
-            }
+                else if (choice == 4)
+                {
+                    gh.ViewStats();
+                }
+
+            } while (choice != 5 && gh.SoulCount < 13);
 
             if(gh.SoulCount >= 13)
             {
@@ -70,8 +87,7 @@ namespace IGME206_TextBasedGame
                 DialogueHandler.Wait();
             } 
 
-            Console.WriteLine("\nYour final inventory is: ");
-            gh.ViewInventory();
+            EndGame();
         }
 
         public static void Main(string[] args)
@@ -85,7 +101,7 @@ namespace IGME206_TextBasedGame
 
             DialogueHandler.Wait();
             
-            Console.WriteLine("\nThe local authoraties have hired you, a reknowed paranormal investegator, " +
+            Console.WriteLine("\nThe local authorities have hired you, a reknowed paranormal investegator, " +
                 "following yet another disappearance in order to determine the fate of these " +
                 "unlucky souls, or, if the legends are true and the castle is haunted, to clear " +
                 "it's halls of its otherworldly inhabitants. ");
@@ -93,14 +109,14 @@ namespace IGME206_TextBasedGame
             DialogueHandler.Wait();
 
             Console.WriteLine("\n" + castleMap + "\n");
-            Console.WriteLine("\nBefore sending you off, the authoraties gave you this old map from the library " +
+            Console.WriteLine("\nBefore sending you off, the authorities gave you this old map from the library " +
                 "and final warning before you enter:" +
                 "\nBe just as wary of traps as waywards souls. It is an old castle, and no one " +
                 "knows what state of disarray it is in.");
 
             DialogueHandler.Wait();
 
-            Console.WriteLine("\nI wish you luck, investigator! You will need it.\n");
+            Console.WriteLine("\nI wish you luck, investigator! You will need it.");
 
             DialogueHandler.Wait();
 

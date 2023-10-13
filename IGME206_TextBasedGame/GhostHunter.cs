@@ -3,23 +3,28 @@ namespace IGME206_TextBasedGame
 {
 	internal class GhostHunter
 	{
-		private int health = 100;
-		private List<Item> inventory = new List<Item> { };
+		private int health = 125;
+		private List<Item> inventory = new List<Item>();
 		private int soulCount = 0;
 		private int maxDamage = 16;
 		private Random rnd = new Random();
 		private static string[] ATTACK_CHOICES = {"Attack with vacuum", "Use item from inventory",
-			"Use a Soul Crystal to better understand the ghost", "Flee"};
+			"Investigate ghost", "Flee"};
 
 		internal GhostHunter() {}
 
 		internal int SoulCount { get { return soulCount; } }
 
+		internal void ViewStats()
+		{
+			Console.WriteLine($"\nHealth: {health}/125\nSouls Captured: {soulCount}/13\nMax damage: {maxDamage - 1}");
+		}
+
 		internal void ViewInventory()
 		{
 			if (inventory.Count == 0) 
 			{
-				Console.WriteLine("\nYour inventory is empty.\n");
+				Console.WriteLine("\nYour inventory is empty.");
 			}
 			else
 			{
@@ -61,7 +66,7 @@ namespace IGME206_TextBasedGame
 			string[] items = new string[inventory.Count];
 			for(int i = 0; i <  inventory.Count; i++)
 			{
-				items[i] = inventory[i].ItemName;
+				items[i] = inventory[i].ToString();
 			}
 
 			int choice = DialogueHandler.UserChoice(items, "\nPlease select an item: ");
@@ -104,7 +109,7 @@ namespace IGME206_TextBasedGame
 			else
 			{
 				Console.WriteLine("\nYou have taken " +  damage + " damage.");
-				Console.WriteLine("\nYour health is now at " + health + ".");
+				Console.WriteLine("Your health is now at " + health + ".");
 				return false;
 			} 
 		}
@@ -129,7 +134,6 @@ namespace IGME206_TextBasedGame
 				Console.WriteLine($"\n{i + 1}: {inventory[i].ToString()}");
 				RecursivePrintInventory(i + 1);
 			} 
-			else { Console.WriteLine("\n");  }
         }
 	}
 }

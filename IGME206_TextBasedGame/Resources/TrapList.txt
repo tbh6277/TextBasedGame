@@ -1,1 +1,1 @@
-Dungeon Entrance;Collapsed stairs;coil of rope
+Staircase to Dungeon;collapsed stairs;coil of rope

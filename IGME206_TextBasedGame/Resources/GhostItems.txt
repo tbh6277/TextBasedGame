@@ -1,11 +1,13 @@
-Annabelle;harp;knife
-Alden;helmet;
-Lord Byron;crown;golbet
+Annabelle;harp
+Alden;helmet
+Alden;sword
+Lord Byron;crown
 Digby;cracked bowl
 Edgar;chipped teacup
-Fairfax:crown
-Jane;letters
+Fairfax;crown
+Jane;letter
 Lady Catherine;locket
-William;wooden cross
+Williams;wooden cross
 Sarah;broken camera
 Brendon;flashlight
+Brendon;wallet

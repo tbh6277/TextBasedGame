@@ -1,20 +1,20 @@
 Music Room;harp:A once beautiful instrument, now rotted from age
-Kitchen;knife
-Outer Court;helmet
-Great Hall;crown:Golden, inlaid with rubies
+Kitchen;knife:A simple kitchen knife.
+Outer Court;helmet:A simple iron helmet, dented at some point over the years.
 Great Hall;golbet:Ornate silver.
 Bakehouse;cracked bowl
 Dining Room;chipped teacup:Faded blue flowers decorate the base of it.
-Great Chambers;crown
+Great Chambers;crown:Golden, inlayed with rubies.
 South-West Tower;letter:Love letter exchanged between Jane and the King of Scotts
 Tea Room;locket:Engraved with a C
-Chapel;wooden cross
-Inner Gate;broken camera
-Dungeon;flashlight
-Stables;coil of rope
-Storeroom;empty crate
-North-East Tower;sword
-South-East Tower;eyeglass
+Chapel;wooden cross:Hand carved oak cross, well worn from being held
+Inner Gate;broken camera:Video camera with shattered screen. It no longer turns on.
+Dungeon;flashlight:The battery appears to be dead.
+Stables;coil of rope:This rope is in surprisingly good condition.
+Storeroom;empty crate:There is nothing but dust inside it.
+North-East Tower;sword:Long, iron sword.
+South-East Tower;eyeglass:The glass is cracked.
 Gatehouse;large iron key
 Storeroom;small iron key
-Gatehouse;large iron key
+Outer Gatehouse;large bronze key
+Courtyard;wallet:A leather wallet with a $20 bill and 3 $1s. It also has a driver's liscence for a twenty-six year old man named Brendon.
